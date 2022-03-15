@@ -1,6 +1,7 @@
 
 package edu.poly.IT17328.Thang;
 
+import static edu.poly.IT17328.Thang.main.s;
 import java.util.Scanner;
 
 
@@ -10,9 +11,13 @@ public class mothAndYear {
         
         //in ra so ngay trong thang 
         //thang 2 nam thuan va nam khong nhuan 
-        System.out.println("nhap thang: ");
-        int moth = Integer.parseInt(s.nextLine());
-       
+//        System.out.println("nhap thang: ");
+//        int moth = Integer.parseInt(s.nextLine());
+         int moth;
+        do {            
+            System.out.println("nhap 1 thang: ");
+             moth = Integer.parseInt(s.nextLine());
+        } while(moth < 1 || moth > 12);
         switch (moth) {
             case 1:
             case 3:

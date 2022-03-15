@@ -8,13 +8,14 @@ public class Menu {
 
     public static Scanner s = new Scanner(System.in);
     public static void main(String[] args) {
-        System.out.println("----------------------MENU------------------------\n");
-        System.out.println(" 1: Giai Phuong trinh bac 1 \n");
-        System.out.println(" 2: Giai Phuong trinh bac 2 \n");
-        System.out.println(" 3: Tinh tien dien\n");
-        System.out.println(" 4: exit \n");
+        System.out.println("\n----------------------MENU------------------------");
+        System.out.println(" 1: Giai Phuong trinh bac 1 ");
+        System.out.println(" 2: Giai Phuong trinh bac 2 ");
+        System.out.println(" 3: Tinh tien dien");
+        System.out.println(" 4: ngay thang");
+        System.out.println(" 5: exit ");
         System.out.print("nhap lua chon: ");
-        int chosse = s.nextInt();
+        int chosse = Integer.parseInt(s.nextLine());
         switch (chosse) {
             case 1:
                 GiaiPhuongTrinhBac1();
@@ -25,7 +26,10 @@ public class Menu {
             case 3:
                 TinhTienDien();
                 break;
-            case 4: 
+            case 4:
+                    System.out.println("ban da chon tim so ngay trong thang");
+                    mothAndYear();
+            case 5: 
                 System.exit(0);
         }
     }
@@ -89,6 +93,42 @@ public class Menu {
         }else{
             money = 50*1000 + (electricNumber - 50)*1200;
             System.out.printf("so tien phai tra la: %d",money);
+        }
+    }
+
+    private static void mothAndYear() {
+          int moth;
+        do {            
+            System.out.println("nhap 1 thang: ");
+             moth = Integer.parseInt(s.nextLine());
+        } while(moth < 1 || moth > 12);
+        switch (moth) {
+            case 1:
+            case 3:
+            case 5:
+            case 7:
+            case 8:
+            case 10:
+            case 13:
+                System.out.println("co 31 ngay ");
+                break;
+            case 4:
+            case 6:
+            case 9:
+            case 11:
+                System.out.println("co 31 ngay ");
+                break;
+            case 2:
+                System.out.println("nhap nam: ");
+             int year = Integer.parseInt(s.nextLine());
+             if((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0)){
+                 System.out.println("co 29 ngay");
+             }else{
+                 System.out.println("co 28 ngay");
+             }
+             break;
+            default:
+                System.out.println("khong hop le");
         }
     }
     
