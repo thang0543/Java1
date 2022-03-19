@@ -29,8 +29,8 @@ public class Liststudent {
         Scanner s = new Scanner (System.in);
         String name[] = new String[50];
         String nameTmp;
-        Double point[] = new Double[50];
-        Double pointTmp;
+        double point[] = new double[50];
+        double pointTmp;
         int index = 0;
         String choose = "y";
           do {  
@@ -45,7 +45,7 @@ public class Liststudent {
             choose = s.nextLine();
         } while(choose.equalsIgnoreCase("y"));
 
-          for(int i = 0; i < name.length; i++){
+          for(int i = 0; i < index; i++){
               System.out.printf("%s \t%f \t%s \n",name[i],point[i],academic(point[i]));
           }
         
@@ -56,14 +56,14 @@ public class Liststudent {
                    point[i] = point[j];
                    point[j] = pointTmp;
                  
-//                   nameTmp = name[i];
-//                   name[i] = name[j];
-//                   name[j] = nameTmp;
+                   nameTmp = name[i];
+                   name[i] = name[j];
+                   name[j] = nameTmp;
                }
            }
         }
-          for(int i = 0; i < name.length; i++){
-              System.out.printf("%s \t%f \t%s \n",name[i],point[i],academic(point[i]));
+          for(int i = 0; i < index; i++){
+              System.out.printf("\n %s \t%f \t%s \n",name[i],point[i],academic(point[i]));
           }
     }
     
