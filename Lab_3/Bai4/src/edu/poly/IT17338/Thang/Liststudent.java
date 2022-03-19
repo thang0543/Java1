@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 public class Liststudent {
 
-  
+  public static  final int max = 50;
     static String academic(Double point){
         String sortPoint = " ";
          if(point < 5 && point >=0){
@@ -27,27 +27,32 @@ public class Liststudent {
     
     public static void main(String[] args) {
         Scanner s = new Scanner (System.in);
-        String name[] = new String[50];
+        String name[] = new String[max];
         String nameTmp;
-        double point[] = new double[50];
+        double point[] = new double[max];
         double pointTmp;
         int index = 0;
         String choose = "y";
+        
           do {  
              
-            System.out.print("Nhap ho va ten: ");
+            System.out.print("\n Nhap ho va ten: ");
                name[index] = s.nextLine();
-            System.out.print("\nNhap diem: ");
+            System.out.print("Nhap diem: ");
                point[index] = s.nextDouble();
                 s.nextLine();
                 index++;
-            System.out.print("\nTiep tuc nhap khong(y/n): ");
+                if(index > max){
+                    System.out.print("\n da qua so luong ");
+                    break;
+                }
+            System.out.print("Tiep tuc nhap khong(y/n): ");
             choose = s.nextLine();
         } while(choose.equalsIgnoreCase("y"));
 
-          for(int i = 0; i < index; i++){
-              System.out.printf("%s \t%f \t%s \n",name[i],point[i],academic(point[i]));
-          }
+//          for(int i = 0; i < index; i++){
+//              System.out.printf("%s \t%f \t%s \n",name[i],point[i],academic(point[i]));
+//          }
         
           for(int i = 0; i < index - 1; i++){
            for(int j = i + 1; j < index;j++){
@@ -63,7 +68,7 @@ public class Liststudent {
            }
         }
           for(int i = 0; i < index; i++){
-              System.out.printf("\n %s \t%f \t%s \n",name[i],point[i],academic(point[i]));
+              System.out.printf(" %s \t%f \t%s \n",name[i],point[i],academic(point[i]));
           }
     }
     
