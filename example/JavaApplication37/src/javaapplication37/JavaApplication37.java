@@ -1,22 +1,23 @@
-package edu.poly.IT17328.Thang;
 
+package javaapplication37;
+
+import java.util.ArrayList;
 import java.util.Scanner;
 
-public class main {
-    
-    static Scanner s = new Scanner(System.in);
 
+public class JavaApplication37 {
+
+   static Scanner s = new Scanner(System.in);
     public static void main(String[] args) {
-        listStaff list = new listStaff();
-        do {            
+      hi h = new hi();
+         do {            
             switch (menu()) {
                 case 1:
-                    System.out.println("ban da chon Nhap danh sach nhan vien  ");
-                    list.inputListStaff(s);
+                    System.out.println("Ban da chon Nhap danh sach nhan vien  ");
+                    h.input(s);
                     break;
                 case 2:
                     System.out.println("Ban da chon Xuat danh sach nhan vien  ");
-                    list.outputListStaff();
                     break;
                 case 3:
                     System.out.println("Ban da chon Tim va hien thi nhan vien theo ma  ");
@@ -49,8 +50,7 @@ public class main {
             }
         } while (true);
     }
-
-    public static int menu() {
+     public static int menu() {
         int choose;
         
         System.out.println("\n--------------------menu---------------------");
@@ -69,5 +69,6 @@ public class main {
         
         return choose;
     }
+    
     
 }
