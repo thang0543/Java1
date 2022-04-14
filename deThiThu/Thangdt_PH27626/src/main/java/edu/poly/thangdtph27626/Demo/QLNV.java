@@ -169,11 +169,11 @@ public class QLNV {
      
      public void outputFindName(Scanner s){
          System.out.println("nhap ten nhan vien: ");
-         String name = s.nextLine();
+         String chuCai = s.nextLine();
          
          for(NhanVien nv : list){
 //             String lastname = nv.getName().substring(nv.getName().lastIndexOf(" "), nv.getName().length());
-             if(name.startsWith(nv.getName())){
+             if(nv.getName().startsWith(chuCai)){
                  nv.inThongTin();
              }
                

@@ -11,24 +11,24 @@ public class Main {
         QLNV list = new QLNV();
         do {            
             switch (menu()) {
-                case 1:
+                case "1":
                     list.init();
                     break;
-                 case 2:
-                    list.input(s);
+                 case "2":
+                    list.deleteId(s);
                     break;
-                  case 3:
+                  case "3":
                     list.ouput();
                     break;
-                   case 4:
+                   case "4":
                     list.outputFindName(s);
                     break;
-                    case 5:
+                    case "5":
                         System.out.println("ke thua");
                         NhanVienTuVan nvtv = new NhanVienTuVan("anh", "pj88", "hang", 1220, 1990);
                         nvtv.inThongTin();
                     break;
-                     case 0:
+                     case "0":
                          System.exit(0);
                     break;
                 default:
@@ -37,7 +37,7 @@ public class Main {
         } while (true);
     }
 
-    private static int menu() {
+    private static String menu() {
         System.out.println("----------------------menu-------------------");
         System.out.println("1: khoi tao");
         System.out.println("2: nhap danh sach nhan vien");
@@ -59,7 +59,7 @@ public class Main {
         System.out.println("19: xua danh sach co ten bat dau voi tu hoa chu cai ");
         System.out.println("0: thoat");
         System.out.println("nhap lua chon: ");
-        int choose = Integer.parseInt(s.nextLine());
+        String choose = s.nextLine();
         return choose;
     }
 }
