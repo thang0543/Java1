@@ -47,6 +47,7 @@ public class Chicken {
         return "Chicken{" + "name=" + name + ", color=" + color + ", price=" + price + '}';
     }
     
+   
     public void input(Scanner s){
         System.out.println("nhap ten: ");
         name = s.nextLine();
