@@ -173,13 +173,13 @@ public class QLNV {
          
          for(NhanVien nv : list){
 //             String lastname = nv.getName().substring(nv.getName().lastIndexOf(" "), nv.getName().length());
-//             if(name.contains(nv.getName())){
-//                 nv.inThongTin();
-//             }
+             if(name.startsWith(nv.getName())){
+                 nv.inThongTin();
+             }
                
-                if(nv.getName().indexOf(name) != -1){
-                    nv.inThongTin();
-                }
+//                if(nv.getName().indexOf(name) != -1){
+//                    nv.inThongTin();
+//                }
          }
      }
 }

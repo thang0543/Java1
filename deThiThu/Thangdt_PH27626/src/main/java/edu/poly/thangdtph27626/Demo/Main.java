@@ -23,6 +23,11 @@ public class Main {
                    case 4:
                     list.outputFindName(s);
                     break;
+                    case 5:
+                        System.out.println("ke thua");
+                        NhanVienTuVan nvtv = new NhanVienTuVan("anh", "pj88", "hang", 1220, 1990);
+                        nvtv.inThongTin();
+                    break;
                      case 0:
                          System.exit(0);
                     break;
